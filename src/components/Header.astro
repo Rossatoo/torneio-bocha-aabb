@@ -1,0 +1,155 @@
+
+---
+const isGamesPage = Astro.url.pathname === '/jogos';
+---
+
+<header class="sticky top-0 z-50 border-b border-slate-200 bg-white">
+  <div class="container-site">
+    <div class="flex h-[76px] items-center justify-between">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3">
+        <div class="flex h-11 w-11 items-center justify-center rounded-md bg-aabb-600 text-lg font-bold text-white">
+          A
+        </div>
+
+        <div>
+          <div class="text-lg font-bold leading-none text-aabb-800">
+            AABB
+          </div>
+
+          <div class="mt-1 text-xs text-slate-500">
+            Torneio de Bocha
+          </div>
+        </div>
+      </a>
+
+      <!-- Menu desktop -->
+      <nav class="hidden items-center gap-8 md:flex">
+
+        <a
+          href="/#inicio"
+          class={`text-sm font-semibold transition ${
+            !isGamesPage
+              ? 'text-aabb-700'
+              : 'text-slate-600 hover:text-aabb-600'
+          }`}
+        >
+          Início
+        </a>
+
+        <a
+          href="/jogos"
+          class={`text-sm font-semibold transition ${
+            isGamesPage
+              ? 'text-aabb-700'
+              : 'text-slate-600 hover:text-aabb-600'
+          }`}
+        >
+          Jogos
+        </a>
+
+        <a
+          href="/jogos#resultados"
+          class="text-sm font-semibold text-slate-600 transition hover:text-aabb-600"
+        >
+          Resultados
+        </a>
+
+        <a
+          href="/#competicao"
+          class="text-sm font-semibold text-slate-600 transition hover:text-aabb-600"
+        >
+          Como funciona
+        </a>
+
+        <a
+          href="/#locais"
+          class="text-sm font-semibold text-slate-600 transition hover:text-aabb-600"
+        >
+          Locais
+        </a>
+
+      </nav>
+
+      <!-- Botão ver jogos -->
+      <a
+        href="/jogos"
+        class="hidden rounded-md bg-aabb-600 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-aabb-700 sm:block"
+      >
+        Ver jogos
+      </a>
+
+      <!-- Menu mobile -->
+      <button
+        id="menu-button"
+        class="rounded-md border border-slate-200 px-3 py-2 text-aabb-700 md:hidden"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+    </div>
+
+    <!-- Menu mobile -->
+    <nav
+      id="mobile-menu"
+      class="hidden border-t border-slate-100 py-4 md:hidden"
+    >
+      <div class="flex flex-col gap-4">
+
+        <a
+          href="/#inicio"
+          class="font-semibold text-aabb-700"
+        >
+          Início
+        </a>
+
+        <a
+          href="/jogos"
+          class="font-semibold text-slate-600"
+        >
+          Jogos
+        </a>
+
+        <a
+          href="/jogos#resultados"
+          class="font-semibold text-slate-600"
+        >
+          Resultados
+        </a>
+
+        <a
+          href="/#competicao"
+          class="font-semibold text-slate-600"
+        >
+          Como funciona
+        </a>
+
+        <a
+          href="/#locais"
+          class="font-semibold text-slate-600"
+        >
+          Locais
+        </a>
+
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+
+    const isOpen = !menu?.classList.contains('hidden');
+
+    button.setAttribute('aria-expanded', String(isOpen));
+  });
+</script>
+```

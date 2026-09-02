@@ -1,0 +1,75 @@
+---
+import { tournament } from '../data/tournament';
+---
+
+<section id="inicio" class="bg-white">
+  <div class="container-site">
+    <div class="flex min-h-[540px] items-center justify-center py-16">
+
+      <div class="w-full max-w-4xl text-center">
+
+        <!-- IDENTIFICAÇÃO -->
+        <div class="mb-5 inline-flex items-center gap-2 rounded-full bg-aabb-50 px-4 py-2 text-sm font-bold text-aabb-700">
+          <span class="h-2 w-2 rounded-full bg-aabb-500"></span>
+          Torneio de Trios
+        </div>
+
+
+        <!-- TÍTULO -->
+        <h1 class="text-5xl font-bold leading-tight tracking-tight text-aabb-900 sm:text-6xl lg:text-7xl">
+          Torneio de
+          <span class="text-aabb-600">
+            Inauguração
+          </span>
+        </h1>
+
+
+        <!-- LOCAL -->
+        <p class="mt-4 text-2xl font-semibold text-slate-500 sm:text-3xl">
+          Cancha AABB
+        </p>
+
+
+        <!-- DESCRIÇÃO -->
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          Acompanhe os jogos, resultados e o caminho dos trios
+          durante o torneio de inauguração.
+        </p>
+
+
+        <!-- BOTÕES -->
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="#jogos" class="btn-primary">
+            Acompanhar jogos
+          </a>
+
+          <a href="#competicao" class="btn-outline">
+            Como funciona
+          </a>
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 text-sm text-slate-500 sm:flex-row sm:gap-8">
+
+          <div>
+            <strong class="text-aabb-700">
+              {tournament.date}
+            </strong>
+          </div>
+
+          <span class="hidden text-slate-300 sm:block">
+            |
+          </span>
+
+          <div>
+            {tournament.city}
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

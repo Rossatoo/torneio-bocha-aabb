@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import TournamentStats from '../components/TournamentStats.astro';
+import NextGames from '../components/NextGames.astro';
+import LatestResults from '../components/LatestResults.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Venues from '../components/Venues.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Torneio de Inauguração | AABB"
+  description="Acompanhe o Torneio de Inauguração da Cancha AABB."
+>
+
+  <Header />
+
+  <main>
+
+    <Hero />
+
+    <Venues />
+
+    <!-- <TournamentStats /> -->
+
+    <NextGames />
+
+    <LatestResults />
+
+    <HowItWorks />
+
+    
+
+  </main>
+
+  <Footer />
+
+</Layout>

@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #1d3e59;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #28689d;
+  color: #ffffff;
+}
+
+.container-site {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-title {
+  color: #1d3e59;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  margin-top: 10px;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.card {
+  border: 1px solid #e5eff9;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(31, 73, 106, 0.08);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #28689d;
+  padding: 13px 22px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #21547f;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #c7ddf0;
+  border-radius: 7px;
+  background: #ffffff;
+  padding: 12px 22px;
+  color: #28689d;
+  font-size: 15px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn-outline:hover {
+  border-color: #28689d;
+  background: #f2f7fc;
+}

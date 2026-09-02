@@ -1,0 +1,567 @@
+---
+import { tournament } from '../data/tournament';
+
+const firstRoundGames = tournament.allGames.filter(
+  (game) => game.phase === 'first_round'
+);
+
+const redrawGames = tournament.allGames.filter(
+  (game) => game.phase === 'redraw'
+);
+
+const knockoutGames = tournament.allGames.filter(
+  (game) => game.phase === 'knockout'
+);
+
+const finishedFirstRound = firstRoundGames.filter(
+  (game) => game.status === 'finished'
+);
+
+const finishedKnockout = knockoutGames.filter(
+  (game) => game.status === 'finished'
+);
+
+const upcomingRedraw = redrawGames.filter(
+  (game) => game.status === 'upcoming'
+);
+
+const upcomingKnockout = knockoutGames.filter(
+  (game) => game.status === 'upcoming'
+);
+---
+
+<section class="section bg-aabb-50">
+  <div class="container-site">
+
+    <!-- CABEÇALHO -->
+
+    <div class="max-w-2xl">
+      <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+        Entenda a competição
+      </p>
+
+      <h2 class="section-title mt-2">
+        Caminho do torneio
+      </h2>
+
+      <p class="section-subtitle">
+        A primeira fase tem uma regra especial: quem perde continua
+        na competição através de um novo sorteio. Depois disso,
+        começa o mata-mata.
+      </p>
+    </div>
+
+
+    <!-- ETAPAS -->
+
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+
+      <!-- PRIMEIRA FASE -->
+
+      <article class="card p-6">
+
+        <div class="flex h-11 w-11 items-center justify-center rounded-full bg-aabb-600 text-lg font-bold text-white">
+          1
+        </div>
+
+        <p class="mt-5 text-xs font-bold uppercase tracking-wider text-aabb-600">
+          Primeira etapa
+        </p>
+
+        <h3 class="mt-1 text-xl font-bold text-aabb-900">
+          1ª Fase
+        </h3>
+
+        <p class="mt-3 text-sm leading-6 text-slate-600">
+          Os trios fazem os primeiros confrontos.
+        </p>
+
+        <div class="mt-5 space-y-2">
+
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-green-600">✓</span>
+            <span class="font-semibold text-slate-700">
+              Venceu → avança
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-aabb-600">↻</span>
+            <span class="font-semibold text-slate-700">
+              Perdeu → novo sorteio
+            </span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- NOVO SORTEIO -->
+
+      <article class="card p-6">
+
+        <div class="flex h-11 w-11 items-center justify-center rounded-full bg-aabb-600 text-lg font-bold text-white">
+          2
+        </div>
+
+        <p class="mt-5 text-xs font-bold uppercase tracking-wider text-aabb-600">
+          Segunda etapa
+        </p>
+
+        <h3 class="mt-1 text-xl font-bold text-aabb-900">
+          Novo sorteio
+        </h3>
+
+        <p class="mt-3 text-sm leading-6 text-slate-600">
+          Os trios que perderam na primeira fase entram novamente
+          no sorteio para definir seus próximos confrontos.
+        </p>
+
+      </article>
+
+
+      <!-- MATA-MATA -->
+
+      <article class="card p-6">
+
+        <div class="flex h-11 w-11 items-center justify-center rounded-full bg-aabb-600 text-lg font-bold text-white">
+          3
+        </div>
+
+        <p class="mt-5 text-xs font-bold uppercase tracking-wider text-aabb-600">
+          Etapa final
+        </p>
+
+        <h3 class="mt-1 text-xl font-bold text-aabb-900">
+          Mata-mata
+        </h3>
+
+        <p class="mt-3 text-sm leading-6 text-slate-600">
+          A partir desta etapa, cada confronto é eliminatório.
+        </p>
+
+        <div class="mt-5 space-y-2">
+
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-green-600">✓</span>
+            <span class="font-semibold text-slate-700">
+              Venceu → avança
+            </span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-red-500">×</span>
+            <span class="font-semibold text-slate-700">
+              Perdeu → eliminado
+            </span>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- PRIMEIRA FASE -->
+
+    <div class="mt-14">
+
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+            Etapa 1
+          </p>
+
+          <h3 class="mt-1 text-2xl font-bold text-aabb-900">
+            Primeira fase
+          </h3>
+        </div>
+
+        <span class="text-sm font-semibold text-slate-400">
+          {firstRoundGames.length} confrontos
+        </span>
+
+      </div>
+
+
+      <div class="mt-6 grid gap-3">
+
+        {
+          firstRoundGames.length > 0 ? (
+
+            firstRoundGames.map((game) => (
+
+              <article class="rounded-xl border border-slate-200 bg-white p-5">
+
+                <div class="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
+
+                  <!-- TRIO A -->
+
+                  <div class="text-center md:text-right">
+
+                    <p class="font-bold text-aabb-900">
+                      {game.trioA.name}
+                    </p>
+
+                    {
+                      game.status === 'finished' &&
+                      game.winner?.id === game.trioA.id && (
+                        <span class="mt-1 inline-block text-xs font-bold text-green-600">
+                          ✓ Avançou
+                        </span>
+                      )
+                    }
+
+                    {
+                      game.status === 'finished' &&
+                      game.winner?.id !== game.trioA.id && (
+                        <span class="mt-1 inline-block text-xs font-semibold text-aabb-600">
+                          ↻ Novo sorteio
+                        </span>
+                      )
+                    }
+
+                  </div>
+
+
+                  <!-- PLACAR -->
+
+                  <div class="text-center">
+
+                    {
+                      game.status === 'finished' ? (
+
+                        <div class="flex items-center justify-center gap-3">
+
+                          <span class="text-2xl font-bold text-aabb-900">
+                            {game.scoreA}
+                          </span>
+
+                          <span class="text-xs font-bold text-slate-400">
+                            X
+                          </span>
+
+                          <span class="text-2xl font-bold text-aabb-900">
+                            {game.scoreB}
+                          </span>
+
+                        </div>
+
+                      ) : (
+
+                        <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
+                          Aguardando
+                        </span>
+
+                      )
+                    }
+
+                  </div>
+
+
+                  <!-- TRIO B -->
+
+                  <div class="text-center md:text-left">
+
+                    <p class="font-bold text-aabb-900">
+                      {game.trioB.name}
+                    </p>
+
+                    {
+                      game.status === 'finished' &&
+                      game.winner?.id === game.trioB.id && (
+                        <span class="mt-1 inline-block text-xs font-bold text-green-600">
+                          ✓ Avançou
+                        </span>
+                      )
+                    }
+
+                    {
+                      game.status === 'finished' &&
+                      game.winner?.id !== game.trioB.id && (
+                        <span class="mt-1 inline-block text-xs font-semibold text-aabb-600">
+                          ↻ Novo sorteio
+                        </span>
+                      )
+                    }
+
+                  </div>
+
+                </div>
+
+
+                <div class="mt-4 border-t border-slate-100 pt-3 text-center text-xs text-slate-400">
+                  {game.date} · {game.time} · {game.venueShort}
+                </div>
+
+              </article>
+
+            ))
+
+          ) : (
+
+            <div class="rounded-xl border border-dashed border-slate-200 bg-white px-6 py-10 text-center">
+
+              <p class="font-bold text-aabb-900">
+                Jogos ainda não cadastrados
+              </p>
+
+              <p class="mt-1 text-sm text-slate-500">
+                Os confrontos da primeira fase aparecerão aqui.
+              </p>
+
+            </div>
+
+          )
+        }
+
+      </div>
+
+    </div>
+
+
+    <!-- SETA -->
+
+    <div class="my-8 flex justify-center">
+
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold text-aabb-600 shadow-sm ring-1 ring-aabb-100">
+        ↓
+      </div>
+
+    </div>
+
+
+    <!-- NOVO SORTEIO -->
+
+    <div>
+
+      <div>
+        <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+          Etapa 2
+        </p>
+
+        <h3 class="mt-1 text-2xl font-bold text-aabb-900">
+          Novo sorteio
+        </h3>
+
+        <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+          Os perdedores da primeira fase continuam na competição.
+          Os novos confrontos serão definidos através de sorteio.
+        </p>
+      </div>
+
+
+      {
+        redrawGames.length > 0 ? (
+
+          <div class="mt-6 grid gap-3">
+
+            {
+              redrawGames.map((game) => (
+
+                <article class="rounded-xl border border-slate-200 bg-white p-5">
+
+                  <div class="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
+
+                    <p class="text-center font-bold text-aabb-900 md:text-right">
+                      {game.trioA.name}
+                    </p>
+
+                    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-aabb-50 text-xs font-bold text-aabb-600">
+                      X
+                    </div>
+
+                    <p class="text-center font-bold text-aabb-900 md:text-left">
+                      {game.trioB.name}
+                    </p>
+
+                  </div>
+
+                  <div class="mt-4 text-center text-xs text-slate-400">
+                    {game.date} · {game.time} · {game.venueShort}
+                  </div>
+
+                </article>
+
+              ))
+            }
+
+          </div>
+
+        ) : (
+
+          <div class="mt-6 rounded-xl border border-dashed border-aabb-200 bg-white px-6 py-10 text-center">
+
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-aabb-50 text-xl text-aabb-600">
+              ↻
+            </div>
+
+            <p class="mt-4 font-bold text-aabb-900">
+              Aguardando o novo sorteio
+            </p>
+
+            <p class="mx-auto mt-1 max-w-lg text-sm text-slate-500">
+              Assim que os confrontos forem sorteados, eles aparecerão
+              automaticamente nesta seção.
+            </p>
+
+          </div>
+
+        )
+
+      }
+
+    </div>
+
+
+    <!-- SETA -->
+
+    <div class="my-8 flex justify-center">
+
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-xl font-bold text-aabb-600 shadow-sm ring-1 ring-aabb-100">
+        ↓
+      </div>
+
+    </div>
+
+
+    <!-- MATA-MATA -->
+
+    <div>
+
+      <div>
+
+        <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+          Etapa 3
+        </p>
+
+        <h3 class="mt-1 text-2xl font-bold text-aabb-900">
+          Mata-mata
+        </h3>
+
+        <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
+          Depois do novo sorteio, os confrontos passam a ser
+          eliminatórios. Perdeu, está fora. Venceu, continua.
+        </p>
+
+      </div>
+
+
+      {
+        knockoutGames.length > 0 ? (
+
+          <div class="mt-6 grid gap-3">
+
+            {
+              knockoutGames.map((game) => (
+
+                <article class="rounded-xl border border-slate-200 bg-white p-5">
+
+                  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
+                    <div>
+
+                      <span class="rounded-md bg-aabb-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-aabb-700">
+                        Mata-mata
+                      </span>
+
+                      <p class="mt-3 font-bold text-aabb-900">
+                        {game.trioA.name}
+                      </p>
+
+                      <p class="my-1 text-xs font-bold text-slate-400">
+                        X
+                      </p>
+
+                      <p class="font-bold text-aabb-900">
+                        {game.trioB.name}
+                      </p>
+
+                    </div>
+
+
+                    <div class="text-left sm:text-right">
+
+                      {
+                        game.status === 'finished' ? (
+
+                          <>
+                            <p class="text-2xl font-bold text-aabb-900">
+                              {game.scoreA} × {game.scoreB}
+                            </p>
+
+                            {
+                              game.winner && (
+                                <p class="mt-1 text-xs font-bold text-green-600">
+                                  ✓ {game.winner.name} avançou
+                                </p>
+                              )
+                            }
+                          </>
+
+                        ) : (
+
+                          <span class="text-sm font-semibold text-slate-400">
+                            Aguardando jogo
+                          </span>
+
+                        )
+                      }
+
+                    </div>
+
+                  </div>
+
+                </article>
+
+              ))
+            }
+
+          </div>
+
+        ) : (
+
+          <div class="mt-6 rounded-xl border border-dashed border-slate-200 bg-white px-6 py-10 text-center">
+
+            <p class="font-bold text-aabb-900">
+              Mata-mata ainda não iniciado
+            </p>
+
+            <p class="mt-1 text-sm text-slate-500">
+              Os confrontos eliminatórios aparecerão aqui quando
+              essa etapa começar.
+            </p>
+
+          </div>
+
+        )
+
+      }
+
+    </div>
+
+
+    <!-- CAMPEÃO -->
+
+    <div class="mt-10 rounded-xl border border-aabb-200 bg-white p-6 text-center sm:p-8">
+
+      <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-aabb-50 text-2xl">
+        🏆
+      </div>
+
+      <h3 class="mt-4 text-xl font-bold text-aabb-900">
+        Grande campeão
+      </h3>
+
+      <p class="mt-2 text-sm text-slate-500">
+        O vencedor da última partida do mata-mata será o campeão
+        do Torneio de Inauguração.
+      </p>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,114 @@
+---
+import { tournament } from '../data/tournament';
+---
+
+<section id="jogos" class="section bg-white">
+  <div class="container-site">
+
+    <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+          Acompanhe
+        </p>
+
+        <h2 class="section-title mt-2">
+          Próximos jogos
+        </h2>
+
+        <p class="section-subtitle">
+          Veja quem joga, quando e em qual cancha.
+        </p>
+      </div>
+
+      <a
+        href="/jogos"
+        class="text-sm font-bold text-aabb-600 transition hover:text-aabb-800"
+      >
+        Ver todos →
+      </a>
+    </div>
+
+    <div class="mt-8 grid gap-4">
+      {
+        tournament.nextGames.map((game) => (
+          <article class="card overflow-hidden">
+
+            <div class="grid md:grid-cols-[130px_1fr_180px]">
+
+              <!-- HORÁRIO / FASE -->
+              <div class="flex flex-col justify-center border-b border-slate-100 bg-aabb-600 p-5 text-center text-white md:border-b-0">
+                <span class="text-3xl font-bold">
+                  {game.time}
+                </span>
+
+                <span class="mt-1 text-xs font-semibold uppercase tracking-wide text-aabb-100">
+                  {game.phase}
+                </span>
+              </div>
+
+
+              <!-- CONFRONTO -->
+              <div class="p-5 md:px-8">
+                <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+
+                  <!-- TRIO A -->
+                  <div class="text-right">
+                    <p class="font-bold text-aabb-800">
+                      {game.trioA.name}
+                    </p>
+
+                    <p class="mt-1 text-xs text-slate-500">
+                      {game.trioA.players.join(' · ')}
+                    </p>
+                  </div>
+
+
+                  <!-- X -->
+                  <div class="text-sm font-bold text-slate-400">
+                    X
+                  </div>
+
+
+                  <!-- TRIO B -->
+                  <div>
+                    <p class="font-bold text-aabb-800">
+                      {game.trioB.name}
+                    </p>
+
+                    <p class="mt-1 text-xs text-slate-500">
+                      {game.trioB.players.join(' · ')}
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <!-- LOCAL -->
+              <div class="flex items-center justify-center border-t border-slate-100 px-5 py-4 md:border-l md:border-t-0">
+                <div class="text-center">
+
+                  <p class="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    Local
+                  </p>
+
+                  <p class="mt-1 font-bold text-aabb-700">
+                    {game.venueShort}
+                  </p>
+
+                  <p class="mt-1 text-xs text-slate-500">
+                    {game.date}
+                  </p>
+
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

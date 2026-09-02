@@ -1,0 +1,432 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { tournament } from '../data/tournament';
+import TournamentPath from '../components/TournamentPath.astro';
+---
+
+<Layout
+  title={`Jogos | ${tournament.name}`}
+  description="Acompanhe os jogos e resultados do Torneio de Inauguração da Cancha AABB."
+>
+
+<Header />
+
+  <!-- CABEÇALHO -->
+  <section class="bg-aabb-50">
+    <div class="container-site py-14 sm:py-16">
+
+      
+
+      <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+        Acompanhe
+      </p>
+
+      <h1 class="mt-2 text-4xl font-bold tracking-tight text-aabb-900 sm:text-5xl">
+        Jogos do torneio
+      </h1>
+
+      <p class="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+        Confira os próximos confrontos, resultados e acompanhe
+        o andamento da competição.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- CONTEÚDO -->
+  <main class="section bg-white">
+    <div class="container-site">
+
+      <!-- FILTROS -->
+      <div class="mb-10 flex flex-wrap gap-3">
+
+        <button
+          data-filter="all"
+          class="filter-button rounded-lg bg-aabb-600 px-5 py-3 text-sm font-bold text-white"
+        >
+          Todos
+        </button>
+
+        <button
+          data-filter="upcoming"
+          class="filter-button rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-600 transition hover:border-aabb-200 hover:text-aabb-700"
+        >
+          Próximos jogos
+        </button>
+
+        <button
+          data-filter="finished"
+          class="filter-button rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-600 transition hover:border-aabb-200 hover:text-aabb-700"
+        >
+          Resultados
+        </button>
+
+      </div>
+
+
+      <!-- =========================
+           PRÓXIMOS JOGOS
+      ========================== -->
+
+      <section id="upcoming-section" data-section="upcoming">
+
+        <div class="mb-6 flex items-end justify-between gap-4">
+
+          <div>
+            <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+              Em breve
+            </p>
+
+            <h2 class="mt-1 text-2xl font-bold text-aabb-900">
+              Próximos jogos
+            </h2>
+          </div>
+
+          <span class="text-sm font-semibold text-slate-400">
+            {tournament.nextGames.length} jogos
+          </span>
+
+        </div>
+
+
+        <div class="grid gap-5">
+
+          {
+            tournament.nextGames.map((game) => (
+              <article class="game-card overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+
+                <!-- CABEÇALHO -->
+                <div class="flex flex-col gap-3 border-b border-slate-100 bg-slate-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+
+                  <div class="flex flex-wrap items-center gap-3">
+
+                    <span class="rounded-md bg-aabb-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-aabb-700">
+                      {game.phase}
+                    </span>
+
+                    <span class="text-sm font-semibold text-slate-500">
+                      {game.date}
+                    </span>
+
+                  </div>
+
+                  <div class="text-lg font-bold text-aabb-800">
+                    {game.time}
+                  </div>
+
+                </div>
+
+
+                <!-- CONFRONTO -->
+                <div class="p-6 sm:p-8">
+
+                  <div class="grid items-center gap-6 md:grid-cols-[1fr_auto_1fr]">
+
+                    <!-- TRIO A -->
+                    <div class="text-center md:text-right">
+
+                      <h3 class="text-xl font-bold text-aabb-900 sm:text-2xl">
+                        {game.trioA.name}
+                      </h3>
+
+                      <p class="mt-2 text-sm text-slate-500">
+                        {game.trioA.players.join(' · ')}
+                      </p>
+
+                    </div>
+
+
+                    <!-- X -->
+                    <div class="flex items-center justify-center">
+
+                      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-aabb-50 text-sm font-bold text-aabb-600">
+                        X
+                      </div>
+
+                    </div>
+
+
+                    <!-- TRIO B -->
+                    <div class="text-center md:text-left">
+
+                      <h3 class="text-xl font-bold text-aabb-900 sm:text-2xl">
+                        {game.trioB.name}
+                      </h3>
+
+                      <p class="mt-2 text-sm text-slate-500">
+                        {game.trioB.players.join(' · ')}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- LOCAL -->
+                <div class="border-t border-slate-100 px-6 py-4 sm:px-8">
+
+                  <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+
+                    <div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
+                        Local
+                      </span>
+
+                      <p class="mt-1 font-bold text-aabb-700">
+                        {game.venue}
+                      </p>
+                    </div>
+
+                    <p class="text-sm text-slate-500">
+                      {tournament.city}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+            ))
+          }
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           RESULTADOS
+      ========================== -->
+
+      <section id="resultados" data-section="finished" class="mt-16">
+
+        <div class="mb-6 flex items-end justify-between gap-4">
+
+          <div>
+            <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+              Já realizados
+            </p>
+
+            <h2 class="mt-1 text-2xl font-bold text-aabb-900">
+              Resultados
+            </h2>
+          </div>
+
+          <span class="text-sm font-semibold text-slate-400">
+            {tournament.results.length} jogos
+          </span>
+
+        </div>
+
+
+        <div class="grid gap-5">
+
+          {
+            tournament.results.map((game) => (
+              <article class="game-card overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+
+                <!-- CABEÇALHO -->
+                <div class="flex flex-col gap-3 border-b border-slate-100 bg-slate-50 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+
+                  <div class="flex flex-wrap items-center gap-3">
+
+                    <span class="rounded-md bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-600">
+                      {game.phase}
+                    </span>
+
+                    <span class="text-sm font-semibold text-slate-500">
+                      {game.date}
+                    </span>
+
+                  </div>
+
+                  <span class="rounded-full bg-green-50 px-3 py-1 text-xs font-bold text-green-700">
+                    Finalizado
+                  </span>
+
+                </div>
+
+
+                <!-- RESULTADO -->
+                <div class="p-6 sm:p-8">
+
+                  <div class="grid items-center gap-5 md:grid-cols-[1fr_auto_1fr]">
+
+                    <!-- TRIO A -->
+                    <div class="text-center md:text-right">
+
+                      <h3 class="text-xl font-bold text-aabb-900">
+                        {game.trioA.name}
+                      </h3>
+
+                      <p class="mt-1 text-sm text-slate-500">
+                        {game.trioA.players.join(' · ')}
+                      </p>
+
+                    </div>
+
+
+                    <!-- PLACAR -->
+                    <div class="flex items-center justify-center gap-3">
+
+                      <span class="text-3xl font-bold text-aabb-900">
+                        {game.scoreA}
+                      </span>
+
+                      <span class="text-sm font-bold text-slate-400">
+                        X
+                      </span>
+
+                      <span class="text-3xl font-bold text-aabb-900">
+                        {game.scoreB}
+                      </span>
+
+                    </div>
+
+
+                    <!-- TRIO B -->
+                    <div class="text-center md:text-left">
+
+                      <h3 class="text-xl font-bold text-aabb-900">
+                        {game.trioB.name}
+                      </h3>
+
+                      <p class="mt-1 text-sm text-slate-500">
+                        {game.trioB.players.join(' · ')}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- LOCAL -->
+                <div class="border-t border-slate-100 px-6 py-4 sm:px-8">
+
+                  <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+
+                    <div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
+                        Local
+                      </span>
+
+                      <p class="mt-1 font-bold text-aabb-700">
+                        {game.venue}
+                      </p>
+                    </div>
+
+                    <p class="text-sm text-slate-500">
+                      {game.time}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+            ))
+          }
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           SEM RESULTADOS
+      ========================== -->
+
+      <div
+        id="empty-state"
+        class="mt-10 hidden rounded-xl border border-dashed border-slate-200 bg-slate-50 px-6 py-12 text-center"
+      >
+        <p class="text-lg font-bold text-aabb-900">
+          Nenhum jogo encontrado
+        </p>
+
+        <p class="mt-2 text-sm text-slate-500">
+          Não existem partidas nessa categoria no momento.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <TournamentPath />
+
+</Layout>
+
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-button');
+  const sections = document.querySelectorAll<HTMLElement>('[data-section]');
+  const emptyState = document.querySelector<HTMLElement>('#empty-state');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+
+      const filter = button.dataset.filter;
+
+      // Atualiza aparência dos botões
+      buttons.forEach((btn) => {
+        btn.classList.remove(
+          'bg-aabb-600',
+          'text-white'
+        );
+
+        btn.classList.add(
+          'border',
+          'border-slate-200',
+          'bg-white',
+          'text-slate-600'
+        );
+      });
+
+      button.classList.remove(
+        'border',
+        'border-slate-200',
+        'bg-white',
+        'text-slate-600'
+      );
+
+      button.classList.add(
+        'bg-aabb-600',
+        'text-white'
+      );
+
+
+      // Mostra / esconde seções
+      let visibleSections = 0;
+
+      sections.forEach((section) => {
+
+        const sectionType = section.dataset.section;
+
+        if (filter === 'all' || filter === sectionType) {
+          section.classList.remove('hidden');
+          visibleSections++;
+        } else {
+          section.classList.add('hidden');
+        }
+
+      });
+
+
+      // Estado vazio
+      if (emptyState) {
+        if (visibleSections === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+        }
+      }
+
+    });
+  });
+</script>
