@@ -4,14 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-  "dev": "astro dev",
-  "build": "node ./node_modules/astro/astro.js build",
-  "preview": "astro preview",
-  "astro": "astro"
-},
+    "dev": "astro dev",
+    "build": "node ./node_modules/astro/astro.js build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.14.4",
-    "tailwindcss": "^4.1.14"
+    "tailwindcss": "^4.1.14",
+    "jiti": "^2.6.1"
   }
 }
