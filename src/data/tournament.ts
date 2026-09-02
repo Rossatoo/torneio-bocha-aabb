@@ -5,7 +5,7 @@ export interface Trio {
 }
 
 export type GamePhase =
-  | 'first_round'
+  | '1° Fase'
   | 'redraw'
   | 'knockout';
 
@@ -144,7 +144,7 @@ export function createGame(game: GameData): Game {
 export const nextGames: Game[] = [
   createGame({
     id: 1,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '14:00',
@@ -157,7 +157,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 2,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '14:00',
@@ -170,7 +170,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 3,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '15:00',
@@ -183,7 +183,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 4,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '15:00',
@@ -196,7 +196,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 5,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '16:00',
@@ -209,7 +209,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 6,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '16:00',
@@ -230,7 +230,7 @@ export const nextGames: Game[] = [
 export const results: Game[] = [
   createGame({
     id: 10,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '13:00',
@@ -246,7 +246,7 @@ export const results: Game[] = [
 
   createGame({
     id: 11,
-    phase: 'first_round',
+    phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '13:00',
@@ -304,7 +304,7 @@ export const tournament = {
       name: 'Clube União',
       description: 'Mais um local parceiro da competição.',
       icon: 'U',
-      apsUrl: 'https://maps.app.goo.gl/ZBG4YW8bJex7R5oH8'
+      mapsUrl: 'https://maps.app.goo.gl/ZBG4YW8bJex7R5oH8'
     }
   ],
 

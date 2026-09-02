@@ -1,19 +1,15 @@
-
 ---
-import { tournament } from '../data/tournament';
+import { tournament } from "../data/tournament";
 ---
 
 <section id="locais" class="section bg-slate-50">
   <div class="container-site">
-
     <div>
       <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
         Onde jogar
       </p>
 
-      <h2 class="section-title mt-2">
-        Locais dos jogos
-      </h2>
+      <h2 class="section-title mt-2">Locais dos jogos</h2>
 
       <p class="section-subtitle">
         As partidas serão realizadas em três locais parceiros.
@@ -23,17 +19,14 @@ import { tournament } from '../data/tournament';
     <div class="mt-8 grid gap-5 md:grid-cols-3">
       {
         tournament.venues.map((venue) => (
-          <article class="card p-6">
-
+          <article class="card relative p-6">
             <div class="flex items-start gap-4">
               <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-aabb-100 font-bold text-aabb-700">
                 {venue.icon}
               </div>
 
               <div>
-                <h3 class="font-bold text-aabb-800">
-                  {venue.name}
-                </h3>
+                <h3 class="font-bold text-aabb-800">{venue.name}</h3>
 
                 <p class="mt-2 text-sm leading-6 text-slate-500">
                   {venue.description}
@@ -45,17 +38,15 @@ import { tournament } from '../data/tournament';
               href={venue.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-aabb-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-aabb-700"
+              class="relative z-10 mt-6 flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-aabb-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-aabb-700"
             >
               <span>📍</span>
               Como chegar
             </a>
-
           </article>
         ))
       }
     </div>
-
   </div>
 </section>
 ```
