@@ -1,6 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/*
+ * ============================================
+ * AABB - PALETA DE CORES
+ * ============================================
+ */
+
+@theme {
+  --color-aabb-50: #f2f7fc;
+  --color-aabb-100: #e5eff9;
+  --color-aabb-200: #c7ddf0;
+  --color-aabb-300: #9fc3e2;
+  --color-aabb-400: #6fa4cf;
+  --color-aabb-500: #3f82b9;
+  --color-aabb-600: #28689d;
+  --color-aabb-700: #21547f;
+  --color-aabb-800: #1f496a;
+  --color-aabb-900: #1d3e59;
+
+  --font-family-sans: Arial, Helvetica, sans-serif;
+  --font-family-display: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+ * ============================================
+ * BASE
+ * ============================================
+ */
 
 html {
   scroll-behavior: smooth;
@@ -9,77 +36,222 @@ html {
 body {
   margin: 0;
   background: #ffffff;
-  color: #1d3e59;
+  color: #0f172a;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-::selection {
-  background: #28689d;
-  color: #ffffff;
-}
+
+/*
+ * ============================================
+ * CONTAINER
+ * ============================================
+ */
 
 .container-site {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
+@media (min-width: 768px) {
+  .container-site {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+/*
+ * ============================================
+ * SEÇÕES
+ * ============================================
+ */
+
 .section {
-  padding: 72px 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .section-title {
-  color: #1d3e59;
   font-size: 2rem;
-  font-weight: 700;
   line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-aabb-900);
 }
 
 .section-subtitle {
-  margin-top: 10px;
-  color: #64748b;
+  margin-top: 0.75rem;
+  max-width: 700px;
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
+  color: #64748b;
 }
 
-.card {
-  border: 1px solid #e5eff9;
-  border-radius: 10px;
-  background: #ffffff;
-  box-shadow: 0 2px 12px rgba(31, 73, 106, 0.08);
+@media (min-width: 768px) {
+  .section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
 }
+
+
+/*
+ * ============================================
+ * CARDS
+ * ============================================
+ */
+
+.card {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgb(15 23 42 / 0.06);
+}
+
+
+/*
+ * ============================================
+ * BOTÃO PRINCIPAL
+ * ============================================
+ */
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 7px;
-  background: #28689d;
-  padding: 13px 22px;
-  color: #ffffff;
-  font-size: 15px;
+  gap: 0.5rem;
+
+  border-radius: 0.375rem;
+
+  background: var(--color-aabb-600);
+
+  padding: 0.75rem 1.25rem;
+
+  font-size: 0.875rem;
   font-weight: 700;
-  transition: 0.2s ease;
+  color: #ffffff;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .btn-primary:hover {
-  background: #21547f;
+  background: var(--color-aabb-700);
 }
+
+
+/*
+ * ============================================
+ * BOTÃO OUTLINE
+ * ============================================
+ */
 
 .btn-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #c7ddf0;
-  border-radius: 7px;
+  gap: 0.5rem;
+
+  border-radius: 0.375rem;
+  border: 1px solid #cbd5e1;
+
   background: #ffffff;
-  padding: 12px 22px;
-  color: #28689d;
-  font-size: 15px;
+
+  padding: 0.75rem 1.25rem;
+
+  font-size: 0.875rem;
   font-weight: 700;
-  transition: 0.2s ease;
+
+  color: var(--color-aabb-700);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .btn-outline:hover {
-  border-color: #28689d;
-  background: #f2f7fc;
+  border-color: var(--color-aabb-400);
+  background: var(--color-aabb-50);
+}
+
+
+/*
+ * ============================================
+ * UTILITÁRIAS DO TORNEIO
+ * ============================================
+ */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+
+/*
+ * ============================================
+ * SELEÇÃO DE TEXTO
+ * ============================================
+ */
+
+::selection {
+  background: var(--color-aabb-200);
+  color: var(--color-aabb-900);
+}
+
+
+/*
+ * ============================================
+ * SCROLLBAR
+ * ============================================
+ */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-aabb-300) #f8fafc;
+}
+
+
+/*
+ * ============================================
+ * LINKS
+ * ============================================
+ */
+
+a {
+  text-decoration: none;
+}
+
+
+/*
+ * ============================================
+ * RESPONSIVIDADE
+ * ============================================
+ */
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9375rem;
+  }
 }
