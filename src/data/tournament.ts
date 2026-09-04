@@ -107,6 +107,26 @@ export const trios: Trio[] = [
     id: 12,
     name: 'Retalista Uruguaiana',
     players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 13,
+    name: 'São Manuel A',
+    players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 14,
+    name: 'São Manuel B',
+    players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 15,
+    name: 'Inter Cruz Santa Maria',
+    players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 16,
+    name: 'CTG Júlio de Castilhos',
+    players: ['André', 'Chico', 'Rafael']
   }
 ];
 

@@ -1,26 +1,70 @@
 ---
-import { times } from '../data/torneio';
+import { tournament } from '../data/tournament';
 ---
 
-<section id="equipes" class="bg-[#08130f]">
-  <div class="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-    <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-[.25em] text-[#d7ff45]">Participantes</p>
-        <h2 class="mt-3 font-display text-4xl font-bold uppercase text-white sm:text-5xl">Equipes inscritas</h2>
-      </div>
-      <div class="font-display text-2xl font-semibold uppercase text-white/30">12 trios</div>
+<section class="section bg-white">
+  <div class="container-site">
+
+    <div class="max-w-2xl">
+      <p class="text-sm font-bold uppercase tracking-wider text-aabb-600">
+        Participantes
+      </p>
+
+      <h1 class="section-title mt-2">
+        Equipes
+      </h1>
+
+      <p class="section-subtitle mt-3">
+        Conheça os trios que participam do Torneio de Inauguração da Cancha AABB-JC.
+      </p>
     </div>
 
-    <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {times.map((time, index) => (
-        <article class="group flex min-h-[92px] items-center gap-4 rounded-2xl border border-white/10 bg-white/[.025] p-4 transition hover:-translate-y-0.5 hover:border-[#d7ff45]/30 hover:bg-white/[.045]">
-          <div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/5 font-display text-lg font-bold text-[#d7ff45]">
-            {String(index + 1).padStart(2, '0')}
-          </div>
-          <h3 class="font-semibold leading-5 text-white/85 group-hover:text-white">{time}</h3>
-        </article>
-      ))}
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        tournament.trios.map((trio, index) => (
+          <article class="card overflow-hidden">
+
+            <div class="border-b border-slate-100 bg-aabb-50 px-6 py-5">
+              <div class="flex items-center justify-between gap-3">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wider text-aabb-600">
+                    Equipe {index + 1}
+                  </p>
+
+                  <h2 class="mt-1 text-lg font-bold text-aabb-900">
+                    {trio.name}
+                  </h2>
+                </div>
+
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-aabb-600 text-sm font-bold text-white">
+                  {index + 1}
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 py-5">
+              <p class="mb-4 text-xs font-bold uppercase tracking-wider text-slate-400">
+                Jogadores
+              </p>
+
+              <ul class="space-y-3">
+                {
+                  trio.players.map((player) => (
+                    <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
+                      <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs">
+                        👤
+                      </span>
+                      {player}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+          </article>
+        ))
+      }
     </div>
+
   </div>
 </section>
