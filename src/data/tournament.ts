@@ -1,7 +1,7 @@
 export interface Trio {
   id: number;
   name: string;
-  players: string[];
+  players?: string[];
 }
 
 export type GamePhase =
@@ -51,83 +51,108 @@ export const trios: Trio[] = [
   {
     id: 1,
     name: 'AABB A',
-    players: ['João', 'Pedro', 'Carlos']
+   // players: ['João', 'Pedro', 'Carlos']
   },
   {
     id: 2,
     name: 'AABB B',
-    players: ['José', 'Paulo', 'Luiz']
+    //players: ['José', 'Paulo', 'Luiz']
   },
   {
     id: 3,
     name: 'Avenida Pinhal',
-    players: ['Antônio', 'Marcos', 'Beto']
+    //players: ['Antônio', 'Marcos', 'Beto']
   },
   {
     id: 4,
     name: 'Os Amigos',
-    players: ['Roberto', 'Sérgio', 'Eduardo']
+    //players: ['Roberto', 'Sérgio', 'Eduardo']
   },
   {
     id: 5,
     name: 'São João A',
-    players: ['Nilo', 'Miguel', 'Davi']
+    //players: ['Nilo', 'Miguel', 'Davi']
   },
   {
     id: 6,
     name: 'São João B',
-    players: ['André', 'Chico', 'Rafael']
+   // players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 7,
     name: 'Farrapos - Agro Linassi Pejuçara',
-    players: ['André', 'Chico', 'Rafael']
+    //players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 8,
     name: 'Cancha do Cara',
-    players: ['André', 'Chico', 'Rafael']
+    //players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 9,
     name: 'Pedreira Gomes',
-    players: ['André', 'Chico', 'Rafael']
+   // players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 10,
     name: 'AABB Cruz Alta',
-    players: ['André', 'Chico', 'Rafael']
+   // players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 11,
     name: '25 de Julho - Arroio do Tigre',
-    players: ['André', 'Chico', 'Rafael']
+  //  players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 12,
     name: 'Retalista Uruguaiana',
-    players: ['André', 'Chico', 'Rafael']
+  //  players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 13,
     name: 'São Manuel A',
-    players: ['André', 'Chico', 'Rafael']
+  //  players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 14,
     name: 'São Manuel B',
-    players: ['André', 'Chico', 'Rafael']
+  //  players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 15,
     name: 'Inter Cruz Santa Maria',
-    players: ['André', 'Chico', 'Rafael']
+  //  players: ['André', 'Chico', 'Rafael']
   },
   {
     id: 16,
     name: 'CTG Júlio de Castilhos',
-    players: ['André', 'Chico', 'Rafael']
-  }
+  //  players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 17,
+    name: 'Asservinjuc',
+  //  players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 18,
+    name: 'Botafogo',
+  //  players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 19,
+    name: 'Agrícola Vendrame',
+  //  players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 20,
+    name: 'Posto Ferrari',
+  //  players: ['André', 'Chico', 'Rafael']
+  },
+  {
+    id: 21,
+    name: 'Agropecuária Richter/RM Prestadora',
+  //  players: ['André', 'Chico', 'Rafael']
+  },
 ];
 
 /*
@@ -162,7 +187,7 @@ export function createGame(game: GameData): Game {
 */
 
 export const nextGames: Game[] = [
-  createGame({
+  /* createGame({
     id: 1,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -238,7 +263,7 @@ export const nextGames: Game[] = [
     trioA: 11,
     trioB: 12,
     status: 'upcoming'
-  })
+  }) */
 ];
 
 /*
@@ -248,7 +273,7 @@ export const nextGames: Game[] = [
 */
 
 export const results: Game[] = [
-  createGame({
+  /* createGame({
     id: 10,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -278,7 +303,7 @@ export const results: Game[] = [
     scoreA: 9,
     scoreB: 12,
     winner: 10
-  })
+  }) */
 ];
 
 /*
