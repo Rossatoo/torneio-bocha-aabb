@@ -155,7 +155,7 @@ export const trios: Trio[] = [
   },
    {
     id: 22,
-    name: 'CTG B',
+    name: 'Padaria Zini',
   //  players: ['André', 'Chico', 'Rafael']
   },
    {
@@ -197,7 +197,7 @@ export function createGame(game: GameData): Game {
 */
 
 export const nextGames: Game[] = [
-   createGame({
+   /* createGame({
     id: 1,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -208,9 +208,9 @@ export const nextGames: Game[] = [
     trioA: 1,
     trioB: 16,
     status: 'upcoming'
-  }) ,
+  }) , */
 
-  createGame({
+  /* createGame({
     id: 2,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -221,9 +221,9 @@ export const nextGames: Game[] = [
     trioA: 4,
     trioB: 3, 
     status: 'upcoming'
-  }) ,
+  }) , */
 
-  createGame({
+  /* createGame({
     id: 3,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -234,9 +234,9 @@ export const nextGames: Game[] = [
     trioA: 15,
     trioB: 10, 
     status: 'upcoming'
-  }) ,
+  }) , */
 
-  createGame({
+  /* createGame({
     id: 5,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -247,9 +247,9 @@ export const nextGames: Game[] = [
     trioA: 11, 
     trioB: 13, 
     status: 'upcoming'
-  }) ,
+  }) , */
 
-   createGame({
+   /* createGame({
     id: 6,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -260,9 +260,9 @@ export const nextGames: Game[] = [
     trioA: 22, 
     trioB: 20, 
     status: 'upcoming'
-  }) ,
+  }) , */
 
-  createGame({
+  /* createGame({
     id: 4,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -273,9 +273,9 @@ export const nextGames: Game[] = [
     trioA: 2, 
     trioB: 14, 
     status: 'upcoming'
-  }) ,
+  }) , */
 
-   createGame({
+   /* createGame({
     id: 8,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -286,9 +286,9 @@ export const nextGames: Game[] = [
     trioA: 21, 
     trioB: 12, 
     status: 'upcoming'
-  }) ,
+  }) , */
 
-    createGame({
+    /* createGame({
     id: 9,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -299,10 +299,10 @@ export const nextGames: Game[] = [
     trioA: 5,
     trioB: 17,
     status: 'upcoming'
-  }) ,
+  }) , */
 
 
-  createGame({
+  /* createGame({
     id: 10,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -313,9 +313,9 @@ export const nextGames: Game[] = [
     trioA: 23,
     trioB: 6,
     status: 'upcoming'
-  }) ,
+  }) , */
 
-  createGame({
+  /* createGame({
     id: 11,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -326,7 +326,7 @@ export const nextGames: Game[] = [
     trioA: 7,
     trioB: 19,
     status: 'upcoming'
-  }) ,
+  }) , */
 
   createGame({
     id: 7,
@@ -339,7 +339,75 @@ export const nextGames: Game[] = [
     trioA: 9, 
     trioB: 18, 
     status: 'upcoming'
-  }) 
+  }) ,
+
+  createGame({
+    id: 12,
+    phase: 'redraw',
+    phaseLabel: 'redraw',
+    date: '05/09/2026',
+    time: '13:30',
+    venue: 'Clube União A',
+    venueShort: 'União A',
+    trioA: 23, 
+    trioB: 7, 
+    status: 'upcoming'
+  }) ,
+  
+  createGame({
+    id: 13,
+    phase: 'redraw',
+    phaseLabel: 'redraw',
+    date: '05/09/2026',
+    time: '13:30',
+    venue: 'Clube União B',
+    venueShort: 'União B',
+    trioA: 16, 
+    trioB: 21, 
+    status: 'upcoming'
+  }) ,
+
+  createGame({
+    id: 14,
+    phase: 'redraw',
+    phaseLabel: 'redraw',
+    date: '05/09/2026',
+    time: '13:30',
+    venue: 'Cancha do CTG A',
+    venueShort: 'CTG A',
+    trioA: 5, 
+    trioB: 10, 
+    status: 'upcoming'
+  }) ,
+
+  createGame({
+    id: 15,
+    phase: 'redraw',
+    phaseLabel: 'redraw',
+    date: '05/09/2026',
+    time: '13:30',
+    venue: 'Cancha do CTG B',
+    venueShort: 'CTG B',
+    trioA: 3, 
+    trioB: 13, 
+    status: 'upcoming'
+  }) ,
+
+ /*  createGame({
+    id: 16,
+    phase: 'redraw',
+    phaseLabel: 'redraw',
+    date: '05/09/2026',
+    time: '13:30',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 22, 
+    trioB: //vencedor , 
+    status: 'upcoming'
+  }) , */
+
+  // --------------- JOGOS DO RESORTEIO -----------------
+
 
 ];
 
@@ -350,22 +418,167 @@ export const nextGames: Game[] = [
 */
 
 export const results: Game[] = [
-  /*createGame({
+
+  createGame({
+    id: 1,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '09:00',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 1,
+    trioB: 16,
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 1
+  }) ,
+
+  createGame({
+    id: 2,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '09:00',
+    venue: 'Clube União A',
+    venueShort: 'União A',
+    trioA: 4,
+    trioB: 3, 
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 4
+  }) ,
+
+  createGame({
+    id: 3,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '09:00',
+    venue: 'Cancha do CTG A',
+    venueShort: 'CTG A',
+    trioA: 15,
+    trioB: 10, 
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 15
+  }) ,
+
+  createGame({
+    id: 4,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '10:00',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 2, 
+    trioB: 14, 
+    status: 'finished',
+    scoreA: 9,
+    scoreB: 12,
+    winner: 14
+  }) ,
+
+  createGame({
+    id: 5,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '09:00',
+    venue: 'Clube União B',
+    venueShort: 'União B',
+    trioA: 11, 
+    trioB: 13, 
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 11
+  }) ,
+
+  createGame({
+    id: 6,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '09:00',
+    venue: 'Cancha do CTG B',
+    venueShort: 'CTG B ',
+    trioA: 22, 
+    trioB: 20, 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 20
+  }) ,
+
+  createGame({
+    id: 8,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '10:00',
+    venue: 'Clube União A',
+    venueShort: 'UNIAO A',
+    trioA: 21, 
+    trioB: 12, 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 12
+  }) ,
+
+  createGame({
+    id: 9,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '10:00',
+    venue: 'Cancha do CTG A',
+    venueShort: 'CTG A',
+    trioA: 5,
+    trioB: 17,
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 17
+  }) ,
+
+  createGame({
     id: 10,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
-    time: '13:00',
-    venue: 'Cancha da AABB',
-    venueShort: 'AABB',
-    trioA: 7,
-    trioB: 8,
+    time: '10:00',
+    venue: 'Clube União B',
+    venueShort: 'União B',
+    trioA: 23,
+    trioB: 6,
     status: 'finished',
-    scoreA: 12,
-    scoreB: 8,
-    winner: 7
-  }),
-  */
+    scoreA: 0,
+    scoreB: 1,
+    winner: 6
+  }) ,
+
+  createGame({
+    id: 11,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '10:00',
+    venue: 'Cancha do CTG B',
+    venueShort: 'CTG B',
+    trioA: 7,
+    trioB: 19,
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 19
+  }) 
+  
 ];
 
 /*
