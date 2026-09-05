@@ -228,11 +228,37 @@ export const nextGames: Game[] = [
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
-    time: '9:00',
+    time: '09:00',
     venue: 'Canchas do CTG',
     venueShort: 'CTG A',
     trioA: 15,
     trioB: 10, 
+    status: 'upcoming'
+  }) ,
+
+  createGame({
+    id: 5,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '09:00',
+    venue: 'Cancha do União',
+    venueShort: 'União B',
+    trioA: 11, 
+    trioB: 13, 
+    status: 'upcoming'
+  }) ,
+
+   createGame({
+    id: 6,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '09:00',
+    venue: 'Canchas do CTG',
+    venueShort: 'CTG B ',
+    trioA: 22, 
+    trioB: 20, 
     status: 'upcoming'
   }) ,
 
@@ -249,29 +275,29 @@ export const nextGames: Game[] = [
     status: 'upcoming'
   }) ,
 
-  createGame({
-    id: 5,
+   createGame({
+    id: 8,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '10:00',
-    venue: 'Cancha do União',
-    venueShort: 'União B',
-    trioA: 11, 
-    trioB: 13, 
+    venue: 'União A',
+    venueShort: 'UNIAO A',
+    trioA: 21, 
+    trioB: 12, 
     status: 'upcoming'
   }) ,
 
-  createGame({
-    id: 6,
+    createGame({
+    id: 9,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '10:00',
     venue: 'Canchas do CTG',
-    venueShort: 'CTG B ',
-    trioA: 22, 
-    trioB: 20, 
+    venueShort: 'CTG A',
+    trioA: 5,
+    trioB: 17,
     status: 'upcoming'
   }) ,
 
@@ -288,40 +314,15 @@ export const nextGames: Game[] = [
     status: 'upcoming'
   }) ,
 
-  createGame({
-    id: 8,
-    phase: '1° Fase',
-    phaseLabel: '1ª Fase',
-    date: '05/09/2026',
-    time: '11:00',
-    venue: 'União A',
-    venueShort: 'UNIAO A',
-    trioA: 21, 
-    trioB: 12, 
-    status: 'upcoming'
-  }) ,
-
-  createGame({
-    id: 9,
-    phase: '1° Fase',
-    phaseLabel: '1ª Fase',
-    date: '05/09/2026',
-    time: '11:00',
-    venue: 'Canchas do CTG',
-    venueShort: 'CTG A',
-    trioA: 5,
-    trioB: 17,
-    status: 'upcoming'
-  }) ,
 
   createGame({
     id: 10,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
-    time: '12:00',
-    venue: 'União B',
-    venueShort: 'AABB',
+    time: '11:00',
+    venue: 'Cancha do União',
+    venueShort: 'União B',
     trioA: 23,
     trioB: 6,
     status: 'upcoming'
@@ -332,7 +333,7 @@ export const nextGames: Game[] = [
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
-    time: '12:00',
+    time: '11:00',
     venue: 'Canchas do CTG',
     venueShort: 'CTG B',
     trioA: 7,
