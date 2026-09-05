@@ -406,7 +406,7 @@ export const nextGames: Game[] = [
     status: 'upcoming'
   }) ,  */
 
-   createGame({
+   /* createGame({
     id: 17,
     phase: 'mata-mata',
     phaseLabel: 'Mata-mata',
@@ -508,7 +508,61 @@ export const nextGames: Game[] = [
     trioA: 9, 
     trioB: 21   , 
     status: 'upcoming'
-  }) 
+  }) , */
+
+  // A PARTIR DE AQUI VALENDO AGORA =====
+
+ createGame({
+    id: 25,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '18:30',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 15, 
+    trioB: 19   , 
+    status: 'upcoming'
+  }),
+
+   createGame({
+    id: 26,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '18:30',
+    venue: 'Clube União A',
+    venueShort: 'União A',
+    trioA: 11, 
+    trioB: 6   , 
+    status: 'upcoming'
+  }),
+
+  createGame({
+    id: 27,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '18:30',
+    venue: 'Clube União B',
+    venueShort: 'União B',
+    trioA: 9, 
+    trioB: 4, 
+    status: 'upcoming'
+  }),
+
+  createGame({
+    id: 28,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '19:00',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 12, 
+    trioB: 18, 
+    status: 'upcoming'
+  })
 
   // --------------- JOGOS DO RESORTEIO -----------------
 
@@ -777,8 +831,135 @@ export const results: Game[] = [
     scoreA: 0,
     scoreB: 1,
     winner: 9
-  }) 
+  }) ,
+
+  createGame({
+    id: 17,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '16:00',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 1, 
+    trioB: 7 , 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 7
+  }) , 
+
+  createGame({
+    id: 18,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '17:00',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 2, 
+    trioB: 19 , 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 19
+  }) ,
+
+  createGame({
+    id: 19,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '15:00',
+    venue: 'Clube União A',
+    venueShort: 'União A',
+    trioA: 4, 
+    trioB: 14 , 
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 4
+  }) , 
+
+  createGame({
+    id: 20,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '16:00',
+    venue: 'Clube União A',
+    venueShort: 'União A',
+    trioA: 5, 
+    trioB: 12 , 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 12
+  }) ,
+
+  createGame({
+    id: 21,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '15:00',
+    venue: 'Clube União B',
+    venueShort: 'União B',
+    trioA: 18, 
+    trioB: 13 , 
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 18
+  }) ,
+
+  createGame({
+    id: 22,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '16:00',
+    venue: 'Clube União B',
+    venueShort: 'União B',
+    trioA: 17, 
+    trioB: 11 , 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 11
+  }) ,
   
+   createGame({
+    id: 23,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '15:00',
+    venue: 'Cancha do CTG A',
+    venueShort: 'CTG A',
+    trioA: 20, 
+    trioB: 6   , 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 6
+  }) ,
+
+  createGame({
+    id: 24,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '16:00',
+    venue: 'Cancha do CTG A',
+    venueShort: 'CTG A',
+    trioA: 9, 
+    trioB: 21   , 
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 9
+  }) 
 ];
 
 /*
