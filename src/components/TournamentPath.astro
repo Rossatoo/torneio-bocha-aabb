@@ -6,11 +6,11 @@ const firstRoundGames = tournament.allGames.filter(
 );
 
 const redrawGames = tournament.allGames.filter(
-  (game) => game.phase === 'redraw'
+  (game) => game.phase === 'ressorteio'
 );
 
 const knockoutGames = tournament.allGames.filter(
-  (game) => game.phase === 'knockout'
+  (game) => game.phase === 'mata-mata'
 );
 
 const finishedFirstRound = firstRoundGames.filter(
