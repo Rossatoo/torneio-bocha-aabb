@@ -328,7 +328,7 @@ export const nextGames: Game[] = [
     status: 'upcoming'
   }) , */
 
-  createGame({
+  /* createGame({
     id: 7,
     phase: '1° Fase',
     phaseLabel: '1ª Fase',
@@ -339,7 +339,7 @@ export const nextGames: Game[] = [
     trioA: 9, 
     trioB: 18, 
     status: 'upcoming'
-  }) ,
+  }) , */
 
   createGame({
     id: 12,
@@ -393,7 +393,7 @@ export const nextGames: Game[] = [
     status: 'upcoming'
   }) ,
 
- /*  createGame({
+   createGame({
     id: 16,
     phase: 'ressorteio',
     phaseLabel: 'ressorteio',
@@ -402,9 +402,9 @@ export const nextGames: Game[] = [
     venue: 'Cancha da AABB',
     venueShort: 'AABB',
     trioA: 22, 
-    trioB: //vencedor , 
+    trioB: 9 , 
     status: 'upcoming'
-  }) , */
+  }) , 
 
   // --------------- JOGOS DO RESORTEIO -----------------
 
@@ -513,6 +513,22 @@ export const results: Game[] = [
     scoreA: 0,
     scoreB: 1,
     winner: 20
+  }) ,
+
+  createGame({
+    id: 7,
+    phase: '1° Fase',
+    phaseLabel: '1ª Fase',
+    date: '05/09/2026',
+    time: '11:00',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 9, 
+    trioB: 18, 
+    status: 'finished',
+    scoreA: 0,
+    scoreB: 1,
+    winner: 18
   }) ,
 
   createGame({
