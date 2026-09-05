@@ -344,7 +344,7 @@ export const nextGames: Game[] = [
   createGame({
     id: 12,
     phase: 'redraw',
-    phaseLabel: 'redraw',
+    phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
     venue: 'Clube União A',
@@ -357,7 +357,7 @@ export const nextGames: Game[] = [
   createGame({
     id: 13,
     phase: 'redraw',
-    phaseLabel: 'redraw',
+    phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
     venue: 'Clube União B',
@@ -370,7 +370,7 @@ export const nextGames: Game[] = [
   createGame({
     id: 14,
     phase: 'redraw',
-    phaseLabel: 'redraw',
+    phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
     venue: 'Cancha do CTG A',
@@ -383,7 +383,7 @@ export const nextGames: Game[] = [
   createGame({
     id: 15,
     phase: 'redraw',
-    phaseLabel: 'redraw',
+    phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
     venue: 'Cancha do CTG B',
