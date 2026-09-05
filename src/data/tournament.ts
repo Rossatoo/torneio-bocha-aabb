@@ -512,7 +512,7 @@ export const nextGames: Game[] = [
 
   // A PARTIR DE AQUI VALENDO AGORA =====
 
- createGame({
+ /* createGame({
     id: 25,
     phase: 'mata-mata',
     phaseLabel: 'Mata-mata',
@@ -523,7 +523,7 @@ export const nextGames: Game[] = [
     trioA: 15, 
     trioB: 19   , 
     status: 'upcoming'
-  }),
+  }), */
 
    createGame({
     id: 26,
@@ -959,7 +959,23 @@ export const results: Game[] = [
     scoreA: 1,
     scoreB: 0,
     winner: 9
-  }) 
+  }) ,
+
+  createGame({
+    id: 25,
+    phase: 'mata-mata',
+    phaseLabel: 'Mata-mata',
+    date: '05/09/2026',
+    time: '18:30',
+    venue: 'Cancha da AABB',
+    venueShort: 'AABB',
+    trioA: 15, 
+    trioB: 19   , 
+    status: 'finished',
+    scoreA: 1,
+    scoreB: 0,
+    winner: 15
+  }),
 ];
 
 /*
