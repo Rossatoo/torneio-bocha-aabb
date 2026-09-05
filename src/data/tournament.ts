@@ -398,7 +398,7 @@ export const nextGames: Game[] = [
     phase: 'ressorteio',
     phaseLabel: 'ressorteio',
     date: '05/09/2026',
-    time: '13:30',
+    time: '14:30',
     venue: 'Cancha da AABB',
     venueShort: 'AABB',
     trioA: 22, 
