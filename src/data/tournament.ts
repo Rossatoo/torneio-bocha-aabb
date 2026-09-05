@@ -295,7 +295,7 @@ export const nextGames: Game[] = [
     date: '05/09/2026',
     time: '11:00',
     venue: 'União A',
-    venueShort: 'AABB',
+    venueShort: 'UNIAO A',
     trioA: 21, 
     trioB: 12, 
     status: 'upcoming'
