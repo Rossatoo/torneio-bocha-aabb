@@ -6,8 +6,8 @@ export interface Trio {
 
 export type GamePhase =
   | '1° Fase'
-  | 'redraw'
-  | 'knockout';
+  | 'ressorteio'
+  | 'mata-mata';
 
 export interface GameData {
   id: number;
@@ -343,7 +343,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 12,
-    phase: 'redraw',
+    phase: 'ressorteio',
     phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
@@ -356,7 +356,7 @@ export const nextGames: Game[] = [
   
   createGame({
     id: 13,
-    phase: 'redraw',
+    phase: 'ressorteio',
     phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
@@ -369,7 +369,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 14,
-    phase: 'redraw',
+    phase: 'ressorteio',
     phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
@@ -382,7 +382,7 @@ export const nextGames: Game[] = [
 
   createGame({
     id: 15,
-    phase: 'redraw',
+    phase: 'ressorteio',
     phaseLabel: 'Ressorteio',
     date: '05/09/2026',
     time: '13:30',
@@ -395,8 +395,8 @@ export const nextGames: Game[] = [
 
  /*  createGame({
     id: 16,
-    phase: 'redraw',
-    phaseLabel: 'redraw',
+    phase: 'ressorteio',
+    phaseLabel: 'ressorteio',
     date: '05/09/2026',
     time: '13:30',
     venue: 'Cancha da AABB',
