@@ -268,8 +268,8 @@ export const nextGames: Game[] = [
     phaseLabel: '1ª Fase',
     date: '05/09/2026',
     time: '10:00',
-    venue: 'CTG B',
-    venueShort: 'AABB',
+    venue: 'Canchas do CTG',
+    venueShort: 'CTG B ',
     trioA: 22, 
     trioB: 20, 
     status: 'upcoming'
